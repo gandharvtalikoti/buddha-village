@@ -129,6 +129,9 @@ export default function ImageCarousel() {
 
   return (
     <section id="gallery" className="max-w-7xl mx-auto p-6 space-y-10">
+        <h1 className="text-5xl text-yellow-400 drop-shadow-lg mb-4 text-center">
+          Experience the Beauty of Buddha Village
+      </h1>
       {/* Row 1 - Staggered Portraits */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
         <div className="mt-6 sm:mt-12">

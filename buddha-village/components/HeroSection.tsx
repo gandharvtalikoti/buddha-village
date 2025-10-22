@@ -31,13 +31,48 @@ export default function HeroSection() {
       {/* <p className="text-xl md:text-2xl text-white max-w-xl mx-auto mb-8 font-light">
         Peaceful Stays, Green Views, <span className="font-semibold">Luxury Living</span>
       </p> */}
+    <div className="text-yellow-400 font-gaegu text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4 space-y-4">
+  {/* Header - Left aligned */}
+  <div className="text-left">
+    <p className="font-semibold">BUDDHA VILLAGE</p>
+    <p>Farm House 🏡</p>
+    <p>Chikkbalapur, Bengaluru</p>
+  </div>
+
+  {/* Body - Center aligned */}
+  <div className="text-center">
+    <p>
+      The best retreat one can find in or around Bangalore would be <br />
+      the Buddha Village.
+    </p>
+    <p>
+      Just 50km from Bangalore, <br />
+      Near Isha Foundation, you will find a whole different world.
+    </p>
+    <p>
+      Surrounded by a lake, <br />
+      different types of plants and animals, <br />
+      you will discover peace like Buddha once did years ago.
+    </p>
+    <p>
+      Come LOVE, LIFE, LIVE at the Buddha Village.
+    </p>
+  </div>
+
+  {/* Footer - Centered emphasis */}
+  <div className="text-center font-semibold text-xl">
+    ❤️ LOVE THE LIFE YOU LIVE ❤️
+  </div>
+</div>
+
+
 
       {/* Call to Action Button */}
       <motion.a
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         href="#gallery"
-        className="px-10 py-4 border border-yellow-400 text-yellow-400 rounded-md hover:bg-yellow-400 hover:text-black transition-colors font-semibold"
+        className="mt-6 px-10 py-4 border border-yellow-400 text-yellow-400 rounded-md hover:bg-yellow-400 hover:text-black transition-colors font-semibold"
       >
         Explore Our Sanctuary
       </motion.a>
