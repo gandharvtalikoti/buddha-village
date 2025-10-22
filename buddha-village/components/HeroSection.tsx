@@ -1,20 +1,30 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 
 export default function HeroSection() {
+  const ref = useRef(null);
+  const { scrollY } = useScroll();
+
+  // When user scrolls from 0 to 300px:
+  // scale reduces from 1 → 0.5 and logo moves up slightly
+  const scale = useTransform(scrollY, [0, 300], [1, 0.5]);
+  const y = useTransform(scrollY, [0, 300], [0, -50]);
+
   return (
     <motion.section
+      ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="relative h-screen bg-black flex flex-col justify-center items-center text-center overflow-hidden"
+      className="relative min-h-screen bg-black flex flex-col justify-center items-center text-center overflow-hidden scroll-smooth"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 -z-10 ">
+      <div className="absolute inset-0 -z-10">
         <img
-          src="/images/hero-buddha.jpg" // replace with your image path
+          src="/images/hero-buddha.jpg"
           alt="Buddha Village - Luxury Home Stay"
           className="w-full h-full object-cover opacity-70"
           loading="eager"
@@ -22,60 +32,58 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
       </div>
 
-      {/* Logo / Title */}
-      <h1 className="text-5xl md:text-7xl font-bold text-yellow-400 drop-shadow-lg mb-4 select-none">
-        <Image src="/images/logo.png" alt="Buddha Village" width={500} height={300} />
-      </h1>
-
-      {/* Tagline */}
-      {/* <p className="text-xl md:text-2xl text-white max-w-xl mx-auto mb-8 font-light">
-        Peaceful Stays, Green Views, <span className="font-semibold">Luxury Living</span>
-      </p> */}
-    <div className="text-yellow-400 font-gaegu text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4 space-y-4">
-  {/* Header - Left aligned */}
-  <div className="text-left">
-    <p className="font-semibold">BUDDHA VILLAGE</p>
-    <p>Farm House 🏡</p>
-    <p>Chikkbalapur, Bengaluru</p>
-  </div>
-
-  {/* Body - Center aligned */}
-  <div className="text-center">
-    <p>
-      The best retreat one can find in or around Bangalore would be <br />
-      the Buddha Village.
-    </p>
-    <p>
-      Just 50km from Bangalore, <br />
-      Near Isha Foundation, you will find a whole different world.
-    </p>
-    <p>
-      Surrounded by a lake, <br />
-      different types of plants and animals, <br />
-      you will discover peace like Buddha once did years ago.
-    </p>
-    <p>
-      Come LOVE, LIFE, LIVE at the Buddha Village.
-    </p>
-  </div>
-
-  {/* Footer - Centered emphasis */}
-  <div className="text-center font-semibold text-xl">
-    ❤️ LOVE THE LIFE YOU LIVE ❤️
-  </div>
-</div>
-
-
-
-      {/* Call to Action Button */}
-      <motion.a
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        href="#gallery"
-        className="mt-6 px-10 py-4 border border-yellow-400 text-yellow-400 rounded-md hover:bg-yellow-400 hover:text-black transition-colors font-semibold"
+      {/* Sticky Logo / Title */}
+      <motion.div
+        style={{
+          scale,
+          y,
+          position: 'sticky',
+          top: 0,
+          zIndex: 50,
+        }}
+        className="mb-6"
       >
-        Explore Our Sanctuary
-      </motion.a>
+        <Image
+          src="/images/logo.png"
+          alt="Buddha Village"
+          width={500}
+          height={300}
+          className="mx-auto drop-shadow-lg select-none"
+        />
+      </motion.div>
+
+      {/* Tagline Content */}
+      <div className="text-yellow-400 font-gaegu text-lg md:text-xl leading-relaxed max-w-2xl mx-auto px-4 space-y-4 mt-4">
+        {/* Header - Left aligned */}
+        <div className="text-left">
+          <p className="font-semibold">BUDDHA VILLAGE</p>
+          <p>Farm House 🏡</p>
+          <p>Chikkbalapur, Bengaluru</p>
+        </div>
+
+        {/* Body - Center aligned */}
+        <div className="text-center">
+          <p>
+            The best retreat one can find in or around Bangalore would be <br />
+            the Buddha Village.
+          </p>
+          <p>
+            Just 50km from Bangalore, <br />
+            Near Isha Foundation, you will find a whole different world.
+          </p>
+          <p>
+            Surrounded by a lake, <br />
+            different types of plants and animals, <br />
+            you will discover peace like Buddha once did years ago.
+          </p>
+          <p>Come LOVE, LIFE, LIVE at the Buddha Village.</p>
+        </div>
+
+        {/* Footer - Centered emphasis */}
+        <div className="text-center font-semibold text-xl">
+          ❤️ LOVE THE LIFE YOU LIVE ❤️
+        </div>
+      </div>
     </motion.section>
   );
 }
