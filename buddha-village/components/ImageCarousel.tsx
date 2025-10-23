@@ -3,46 +3,51 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { LocationMapSection } from './LocationMapSection';
 
 // Portrait images
 const portraits1 = [
-  '/images/gallery/portrait1_1.jpg',
-  '/images/gallery/portrait1_2.jpg',
-  '/images/gallery/portrait1_3.jpg',
-  '/images/gallery/portrait1_4.jpg',
-  // add more...
+  '/images/gallery-home/portrait1_1.jpg',
+  '/images/gallery-home/portrait1_2.jpg',
+  '/images/gallery-home/portrait1_3.jpg',
+  '/images/gallery-home/portrait1_4.jpg',
+  '/images/gallery-home/portrait1_5.jpg',
+  '/images/gallery-home/portrait1_6.jpg',
+  '/images/gallery-home/portrait1_7.jpg',
 ];
 
 const portraits2 = [
-  '/images/gallery/portrait2_1.jpg',
-  '/images/gallery/portrait2_2.jpg',
-  '/images/gallery/portrait2_3.jpg',
-  '/images/gallery/portrait2_4.jpg',
-  // add more...
+  '/images/gallery-home/portrait2_1.jpg',
+  '/images/gallery-home/portrait2_2.jpg',
+  '/images/gallery-home/portrait2_3.jpg',
+  '/images/gallery-home/portrait2_4.jpg',
+  '/images/gallery-home/portrait2_5.jpg',
+  '/images/gallery-home/portrait2_6.jpg',
 ];
 
 const portraits3 = [
-  '/images/gallery/portrait3_1.jpg',
-  '/images/gallery/portrait3_2.jpg',
-  '/images/gallery/portrait3_3.jpg',
-  '/images/gallery/portrait3_4.jpg',
-  // add more...
+  '/images/gallery-home/portrait3_1.jpg',
+  '/images/gallery-home/portrait3_2.jpg',
+  '/images/gallery-home/portrait3_3.jpg',
+  '/images/gallery-home/portrait3_4.jpg',
+  '/images/gallery-home/portrait3_5.jpg',
 ];
 
 // Landscape images
 const landscapes = [
-  '/images/gallery/landscape1.jpeg',
-  '/images/gallery/landscape2.jpg',
-  '/images/gallery/landscape3.jpg',
-  '/images/gallery/landscape4.jpg',
-  // add more...
+  '/images/gallery-home/landscape1.jpeg',
+  '/images/gallery-home/landscape2.jpg',
+  '/images/gallery-home/landscape3.jpg',
+  '/images/gallery-home/landscape4.jpg',
+  '/images/gallery-home/landscape5.jpg',
 ];
 
 const landscapes2 = [
-  '/images/gallery/landscape5.jpg',
-  '/images/gallery/landscape6.jpeg',
-  '/images/gallery/landscape7.jpg',
-  '/images/gallery/landscape8.jpg',
+  '/images/gallery-home/landscape6.jpeg',
+  '/images/gallery-home/landscape7.jpg',
+  '/images/gallery-home/landscape8.jpg',
+  '/images/gallery-home/landscape9.jpeg',
+  '/images/gallery-home/landscape10.jpg',
 ];
 
 // Hook for carousel logic
@@ -77,7 +82,7 @@ function ThumbnailCarousel({
   isPortrait?: boolean;
 }) {
   return (
-    <div className="relative bg-none rounded-md overflow-hidden">
+    <div className="relative bg-white rounded-md overflow-hidden">
       <AnimatePresence mode="wait" initial={false}>
         <motion.img
           key={images[currentIndex]}
@@ -130,7 +135,7 @@ export default function ImageCarousel() {
   return (
     <section id="gallery" className="max-w-7xl mx-auto p-6 space-y-10">
         <h1 className="text-5xl text-yellow-400 drop-shadow-lg mb-4 text-center">
-          Experience the Beauty of Buddha Village
+          Experience the Beauty of THE BUDDHA VILLAGE
       </h1>
       {/* Row 1 - Staggered Portraits */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 place-items-center">
@@ -207,12 +212,11 @@ export default function ImageCarousel() {
           transition={{ duration: 1.2, delay: 0.3 }}
           className="absolute inset-x-0 bottom-8 text-center text-white drop-shadow-lg"
         >
-          <h3 className="text-2xl md:text-3xl font-semibold">Discover the Beauty of Buddha Village</h3>
-          <p className="text-sm md:text-base mt-1 font-light tracking-wide">
-            Where Nature Meets Luxury
-          </p>
+
         </motion.div>
       </div>
+    <LocationMapSection/>
+
     </section>
   );
 }

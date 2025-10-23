@@ -1,8 +1,8 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
 import { useRef } from 'react';
+import { LocationMapSection } from './LocationMapSection';
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -14,16 +14,34 @@ export default function HeroSection() {
   // opacity fades from 1 → 0
   const scale = useTransform(scrollY, [0, 300], [1, 0.5]);
   const y = useTransform(scrollY, [0, 300], [0, -50]);
-  const opacity = useTransform(scrollY, [0, 250], [1, 0]); // fade-out effect
+  // const opacity = useTransform(scrollY, [0, 250], [1, 0]); // fade-out effect
 
   return (
+    <section className=" overflow-hidden">
+
     <motion.section
       ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="relative min-h-screen bg-black flex flex-col justify-center items-center text-center overflow-hidden scroll-smooth"
+      className="relative min-h-screen flex flex-col justify-center items-center text-center overflow-hidden scroll-smooth"
     >
+
+
+<div className="absolute inset-0 -z-10 overflow-hidden">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover"
+  >
+    <source src="/videos/buddha-4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  {/* Gradient overlay if needed */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+</div>
       {/* Background Image */}
       {/* <div className="absolute inset-0 -z-10">
         <img
@@ -59,22 +77,27 @@ export default function HeroSection() {
         style={{
           scale,
           y,
-          opacity,
+          // opacity,
           position: 'sticky',
           top: 0,
           zIndex: 50,
         }}
       >
-        <div className="text-center px-6 text-yellow-300 mb-3 text-lg max-w-7xl mx-auto">
+        <div className="text-center px-6 text-yellow-300 mb-3 text-2xl max-w-7xl mx-auto">
           <p>
             The best retreat one can find in or around Bangalore would be the Buddha Village.
             Just 50km from Bangalore, near Isha Foundation, you will find a whole different world.
             Surrounded by a lake, different types of plants and animals, you will discover peace
             like Buddha once did years ago. <br />
+            <p className='font-bold'>
+
             Come LOVE, LIFE, LIVE at the Buddha Village.
+            </p>
           </p>
         </div>
       </motion.div>
     </motion.section>
+    </section>
+
   );
 }

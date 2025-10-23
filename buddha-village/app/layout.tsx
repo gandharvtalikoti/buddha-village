@@ -1,8 +1,9 @@
 'use client';
 
 import { ReactNode } from 'react';
-import './globals.css'; // Make sure you have Tailwind CSS imported
+import './globals.css'; // Tailwind import
 import Navbar from './components/NavBar';
+import Footer from './components/Footer'; // <-- Add this import
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,9 +14,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body className="bg-black text-white overflow-x-hidden font-gaegu">
-        <Navbar/>
-        {children}
+      <body className="bg-white text-white overflow-x-hidden font-gaegu">
+        <Navbar />
+        <main className="pt-14 min-h-screen">{children}</main>
+        <Footer /> {/* <-- Add this line for the footer */}
       </body>
     </html>
   );

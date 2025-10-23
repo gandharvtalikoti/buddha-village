@@ -16,8 +16,8 @@ export default function Navbar() {
 
   const links = [
     { name: 'Home', href: '/' },
-    { name: 'Photo Gallery', href: '/gallery' },
-    { name: 'Stays', href: '/stays' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Stay', href: '/stays' },
     { name: 'Contact', href: '/contact' },
   ];
 
