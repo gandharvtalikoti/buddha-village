@@ -1,11 +1,41 @@
+// 'use client';
+
+// import { ReactNode } from 'react';
+// import './globals.css'; // Tailwind import
+// import Navbar from './components/NavBar';
+// import Footer from './components/Footer'; // <-- Add this import
+
+// export default function RootLayout({ children }: { children: ReactNode }) {
+//   return (
+//     <html lang="en">
+//       <head>
+//         <link
+//           href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap"
+//           rel="stylesheet"
+//         />
+//       </head>
+//       <body className="bg-white text-white overflow-x-hidden font-gaegu">
+//         <Navbar />
+//         <main className="pt-14 min-h-screen">{children}</main>
+//         <Footer /> {/* <-- Add this line for the footer */}
+//       </body>
+//     </html>
+//   );
+// }
+
 'use client';
 
 import { ReactNode } from 'react';
-import './globals.css'; // Tailwind import
+import { usePathname } from 'next/navigation';
+import './globals.css';
 import Navbar from './components/NavBar';
-import Footer from './components/Footer'; // <-- Add this import
+import Footer from './components/Footer';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname(); // This works in client layout
+
+  const showFooter = pathname !== '/contact';
+
   return (
     <html lang="en">
       <head>
@@ -17,11 +47,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="bg-white text-white overflow-x-hidden font-gaegu">
         <Navbar />
         <main className="pt-14 min-h-screen">{children}</main>
-        <Footer /> {/* <-- Add this line for the footer */}
+        {showFooter && <Footer />}
       </body>
     </html>
   );
 }
+
 
 
 // uncomment this if u want white background for carousel
