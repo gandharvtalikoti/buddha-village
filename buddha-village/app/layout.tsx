@@ -30,19 +30,16 @@ import { usePathname } from 'next/navigation';
 import './globals.css';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
+import { gaegu } from '@/lib/font'; // Add this import
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname(); // This works in client layout
+  const pathname = usePathname();
 
   const showFooter = pathname !== '/contact';
 
   return (
-    <html lang="en">
+    <html lang="en" className={gaegu.variable}> 
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
       </head>
       <body className="bg-white text-white overflow-x-hidden font-gaegu">
         <Navbar />
@@ -52,7 +49,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
 
 
 // uncomment this if u want white background for carousel

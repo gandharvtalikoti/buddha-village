@@ -55,7 +55,7 @@ export default function Navbar() {
     <Link
       key={link.name}
       href={link.href}
-      className={`text-black text-sm transition duration-200 ${
+      className={`text-black text-m transition duration-200 ${
         pathname === link.href
           ? 'border-b-2 border-yellow-400'
           : 'hover:text-yellow-500'
