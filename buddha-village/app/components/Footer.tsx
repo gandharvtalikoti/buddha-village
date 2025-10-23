@@ -44,7 +44,7 @@ export default function Footer() {
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-green-500 text-white font-semibold shadow hover:bg-green-600 transition mb-4"
           >
             <FaWhatsapp className="text-xl" />
-            Book on WhatsApp: +91 80959 99833
+            Book on WhatsApp: +91 80959 98833
           </a>
         </div>
 
@@ -63,8 +63,8 @@ export default function Footer() {
         <div className="flex flex-col">
           <div className="font-semibold text-lg mb-2 text-black">Contact & Location</div>
           <div className="text-gray-700 text-sm mb-2">
-            <span className="block">ashot833@gmail.com</span>
-            <span className="block">+91 80958 99833</span>
+            <span className="block">buddhavillage.blr@gmail.com</span>
+            <span className="block">+91 80959 98833</span>
           </div>
           <a
             href="https://maps.app.goo.gl/6AipgYeLgeKrcYdk6"
