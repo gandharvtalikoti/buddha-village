@@ -36,7 +36,7 @@ export default function HeroSection() {
     playsInline
     className="w-full h-full object-cover"
   >
-    <source src="/videos/buddha-4.mp4" type="video/mp4" />
+    <source src="/videos/buddha-4-comp.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
   {/* Gradient overlay if needed */}
