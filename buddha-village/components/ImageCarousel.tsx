@@ -12,8 +12,8 @@ const portraits1 = [
   '/images/gallery-home/portrait1_3.jpg',
   '/images/gallery-home/portrait1_4.jpg',
   '/images/gallery-home/portrait1_5.jpg',
-  '/images/gallery-home/portrait1_6.jpg',
-  '/images/gallery-home/portrait1_7.jpg',
+  '/images/gallery-home/portrait1_6.jpeg',
+  '/images/gallery-home/portrait1_7.jpeg',
 ];
 
 const portraits2 = [
@@ -22,7 +22,7 @@ const portraits2 = [
   '/images/gallery-home/portrait2_3.jpg',
   '/images/gallery-home/portrait2_4.jpg',
   '/images/gallery-home/portrait2_5.jpg',
-  '/images/gallery-home/portrait2_6.jpg',
+  '/images/gallery-home/portrait2_6.jpeg',
   '/images/gallery-home/portrait2_7.jpg',
 ];
 
@@ -32,23 +32,25 @@ const portraits3 = [
   '/images/gallery-home/portrait3_3.jpeg',
   '/images/gallery-home/portrait3_4.jpeg',
   '/images/gallery-home/portrait3_5.jpeg',
+  '/images/gallery-home/portrait3_6.jpeg',
+  '/images/gallery-home/portrait3_7.jpeg',
 ];
 
 // Landscape images
 const landscapes = [
   '/images/gallery-home/landscape1.jpeg',
   '/images/gallery-home/landscape2.jpg',
-  '/images/gallery-home/landscape3.jpg',
+  '/images/gallery-home/landscape3.jpeg',
   '/images/gallery-home/landscape4.jpg',
   '/images/gallery-home/landscape5.jpg',
 ];
 
 const landscapes2 = [
-  '/images/gallery-home/landscape6.jpeg',
+  '/images/gallery-home/landscape6.jpg',
   '/images/gallery-home/landscape7.jpg',
-  '/images/gallery-home/landscape8.jpeg',
+  '/images/gallery-home/landscape8.jpg',
   '/images/gallery-home/landscape9.jpg',
-  '/images/gallery-home/landscape10.jpeg',
+  '/images/gallery-home/landscape10.jpg',
 ];
 
 // Hook for carousel logic
@@ -182,14 +184,14 @@ export default function ImageCarousel() {
         </div>
         <div className="flex flex-col gap-4 justify-center">
           <ThumbnailCarousel
-            images={portraits1}
+            images={portraits2}
             currentIndex={p1Index}
             goPrev={p1Prev}
             goNext={p1Next}
             isPortrait={true}
           />
           <ThumbnailCarousel
-            images={portraits2}
+            images={portraits1}
             currentIndex={p2Index}
             goPrev={p2Prev}
             goNext={p2Next}
