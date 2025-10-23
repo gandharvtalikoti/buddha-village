@@ -29,16 +29,16 @@ export default function HeroSection() {
 
 
 <div className="absolute inset-0 -z-10 overflow-hidden">
-  <video
-    autoPlay
-    muted
-    loop
-    playsInline
-    className="w-full h-full object-cover"
-  >
-    <source src="/videos/buddha-4-comp.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+<video
+  autoPlay
+  muted
+  loop
+  playsInline
+  className="w-full h-full object-cover"
+>
+  <source src="https://res.cloudinary.com/dtwq72bil/video/upload/buddha-4_1_xssukg.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
   {/* Gradient overlay if needed */}
   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
 </div>
