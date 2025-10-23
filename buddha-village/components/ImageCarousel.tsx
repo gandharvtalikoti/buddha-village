@@ -47,7 +47,7 @@ const landscapes2 = [
   '/images/gallery-home/landscape6.jpeg',
   '/images/gallery-home/landscape7.jpg',
   '/images/gallery-home/landscape8.jpeg',
-  '/images/gallery-home/landscape9.jpeg',
+  '/images/gallery-home/landscape9.jpg',
   '/images/gallery-home/landscape10.jpeg',
 ];
 
