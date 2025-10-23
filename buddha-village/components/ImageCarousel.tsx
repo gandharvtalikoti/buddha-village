@@ -23,6 +23,7 @@ const portraits2 = [
   '/images/gallery-home/portrait2_4.jpg',
   '/images/gallery-home/portrait2_5.jpg',
   '/images/gallery-home/portrait2_6.jpg',
+  '/images/gallery-home/portrait2_7.jpg',
 ];
 
 const portraits3 = [
@@ -47,7 +48,7 @@ const landscapes2 = [
   '/images/gallery-home/landscape7.jpg',
   '/images/gallery-home/landscape8.jpeg',
   '/images/gallery-home/landscape9.jpeg',
-  '/images/gallery-home/landscape10.jpg',
+  '/images/gallery-home/landscape10.jpeg',
 ];
 
 // Hook for carousel logic
