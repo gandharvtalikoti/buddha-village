@@ -40,7 +40,7 @@ const landscapes = [
 
 const landscapes2 = [
   '/images/gallery/landscape5.jpg',
-  '/images/gallery/landscape6.jpg',
+  '/images/gallery/landscape6.jpeg',
   '/images/gallery/landscape7.jpg',
   '/images/gallery/landscape8.jpg',
 ];

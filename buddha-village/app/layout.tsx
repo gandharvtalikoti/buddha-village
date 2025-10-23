@@ -2,6 +2,7 @@
 
 import { ReactNode } from 'react';
 import './globals.css'; // Make sure you have Tailwind CSS imported
+import Navbar from './components/NavBar';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="bg-black text-white overflow-x-hidden font-gaegu">
+        <Navbar/>
         {children}
       </body>
     </html>
