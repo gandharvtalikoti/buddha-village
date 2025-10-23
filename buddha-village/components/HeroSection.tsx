@@ -84,16 +84,7 @@ export default function HeroSection() {
         }}
       >
         <div className="text-center px-6 text-yellow-300 mb-3 text-2xl max-w-7xl mx-auto">
-          <p>
-            The best retreat one can find in or around Bangalore would be the Buddha Village.
-            Just 50km from Bangalore, near Isha Foundation, you will find a whole different world.
-            Surrounded by a lake, different types of plants and animals, you will discover peace
-            like Buddha once did years ago. <br />
-            <p className='font-bold'>
-
-            Come LOVE, LIFE, LIVE at the Buddha Village.
-            </p>
-          </p>
+          
         </div>
       </motion.div>
     </motion.section>

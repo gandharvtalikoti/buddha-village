@@ -26,11 +26,11 @@ const portraits2 = [
 ];
 
 const portraits3 = [
-  '/images/gallery-home/portrait3_1.jpg',
-  '/images/gallery-home/portrait3_2.jpg',
-  '/images/gallery-home/portrait3_3.jpg',
-  '/images/gallery-home/portrait3_4.jpg',
-  '/images/gallery-home/portrait3_5.jpg',
+  '/images/gallery-home/portrait3_1.jpeg',
+  '/images/gallery-home/portrait3_2.jpeg',
+  '/images/gallery-home/portrait3_3.jpeg',
+  '/images/gallery-home/portrait3_4.jpeg',
+  '/images/gallery-home/portrait3_5.jpeg',
 ];
 
 // Landscape images
@@ -45,7 +45,7 @@ const landscapes = [
 const landscapes2 = [
   '/images/gallery-home/landscape6.jpeg',
   '/images/gallery-home/landscape7.jpg',
-  '/images/gallery-home/landscape8.jpg',
+  '/images/gallery-home/landscape8.jpeg',
   '/images/gallery-home/landscape9.jpeg',
   '/images/gallery-home/landscape10.jpg',
 ];

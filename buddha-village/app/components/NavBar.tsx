@@ -22,7 +22,8 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md">
+    <nav className="fixed top-0 w-full z-50 bg-white backdrop-blur-md border-b-2 shadow-sm">
+
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
         <Link href="/" className="flex items-center space-x-2">
           {/* <Image

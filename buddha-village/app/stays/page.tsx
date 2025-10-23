@@ -15,6 +15,8 @@ const stays = [
       '/images/stays/cottage3.jpg',
       '/images/stays/cottage4.jpg',
       '/images/stays/cottage5.jpg',
+      '/images/stays/cottage6.jpg',
+      '/images/stays/cottage7.jpg',
     ],
     pricing: [
       {
@@ -46,6 +48,7 @@ const stays = [
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
       '/images/stays/g1d.jpg',
+      '/images/stays/g1e.jpg',
     ],
     pricing: [
       {
@@ -73,6 +76,7 @@ const stays = [
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
       '/images/stays/g2d.jpg',
+      '/images/stays/g2e.jpg',
     ],
     pricing: [
       {

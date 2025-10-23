@@ -97,7 +97,7 @@ export default function GalleryCollage() {
   }, []);
 
   return (
-    <section className="min-h-screen bg-black py-14 px-4 md:px-8">
+    <section className="min-h-screen bg-white py-14 px-4 md:px-8">
       <h1 className="text-4xl md:text-5xl text-yellow-400 font-bold font-gaegu mb-12 text-center">
         Gallery
       </h1>

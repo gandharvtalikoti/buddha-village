@@ -11,17 +11,30 @@ export default function Footer() {
         
         {/* Branding & WhatsApp Booking */}
         <div className="flex flex-col">
-          <Link href="/" className="flex items-center space-x-2 mb-3">
-            <Image
-              src="/images/nav-logo-black.png"
-              alt="Buddha Village"
-              width={100}
-              height={100}
-              className="drop-shadow-lg select-none"
-            />
-          </Link>
-          <p className="max-w-xs text-gray-700 text-sm mb-4">
-            Serenely located in Chikkaballapur, Buddha Village is crafted for peaceful stays under open skies.
+        <div className="flex justify-center mb-3">
+  <Link href="/" className="flex items-center space-x-2">
+    <Image
+      src="/images/nav-logo-black.png"
+      alt="Buddha Village"
+      width={100}
+      height={100}
+      className="drop-shadow-lg select-none"
+    />
+  </Link>
+</div>
+
+          <p className="max-w-xs text-gray-700 text-sm mb-4 text-center">
+          
+            The best retreat one can find in or around Bangalore would be the Buddha Village.
+            Just 50km from Bangalore, near Isha Foundation, you will find a whole different world.
+            Surrounded by a lake, different types of plants and animals, you will discover peace
+            like Buddha once did years ago. <br />
+
+
+<span className='font-bold'>
+
+            Come LOVE, LIFE, LIVE at the Buddha Village.
+</span>
           </p>
 
           <a
