@@ -49,6 +49,7 @@ const stays = [
       '/images/stays/g1c.jpg',
       '/images/stays/g1d.jpg',
       '/images/stays/g1e.jpg',
+      '/images/stays/g1f.jpg',
     ],
     pricing: [
       {
