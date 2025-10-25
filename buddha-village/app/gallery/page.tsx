@@ -110,14 +110,14 @@ export default function GalleryCollage() {
         }}
       >
         {loading && (
-          <div className="text-white text-center w-full col-span-full py-32">
+          <div className="text-black text-center w-full col-span-full py-32">
             <div className="inline-block w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mb-4"></div>
             <p>Loading gallery...</p>
           </div>
         )}
 
         {!loading && images.length === 0 && (
-          <div className="text-white text-center w-full col-span-full py-32">
+          <div className="text-black text-center w-full col-span-full py-32">
             No photos yet. Add more to{' '}
             <span className="text-yellow-300">/public/images/gallery/</span>
           </div>

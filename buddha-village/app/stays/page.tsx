@@ -188,7 +188,7 @@ export default function StaysPage() {
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.7, type: 'spring' }}
-            className="flex flex-col md:flex-row gap-6 md:gap-10 items-center rounded-2xl bg-gray-50 shadow-lg border border-gray-300 p-4 md:p-8"
+            className="flex flex-col md:flex-row gap-6 md:gap-10 items-center rounded-2xl bg-white shadow-lg p-6 md:p-10"
           >
             <div className="w-full md:w-2/5">
               <StayCarousel images={stay.images} />
