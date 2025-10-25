@@ -22,7 +22,6 @@
 //     </html>
 //   );
 // }
-
 'use client';
 
 import { ReactNode } from 'react';
@@ -30,16 +29,17 @@ import { usePathname } from 'next/navigation';
 import './globals.css';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
-import { gaegu } from '@/lib/font'; // Add this import
+import { gaegu } from '@/lib/font';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
-
   const showFooter = pathname !== '/contact';
 
   return (
     <html lang="en" className={gaegu.variable}> 
       <head>
+        {/* Favicon Link */}
+        <link rel="icon" href="/images/tab-logo.png" type="image/png" />
       </head>
       <body className="bg-white text-white overflow-x-hidden font-gaegu">
         <Navbar />
