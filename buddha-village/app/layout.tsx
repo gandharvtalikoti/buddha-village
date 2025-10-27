@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en" className={gaegu.variable}> 
       <head>
         {/* Favicon Link */}
-        <link rel="icon" href="/images/tab-logo.png" type="image/png" />
+        <link rel="icon" href="/images/tab-logo.png" type="png" />
       </head>
       <body className="bg-white text-white overflow-x-hidden font-gaegu">
         <Navbar />
