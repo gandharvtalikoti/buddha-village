@@ -24,6 +24,7 @@
 // }
 'use client';
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
 import './globals.css';
@@ -45,6 +46,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Navbar />
         <main className="pt-14 min-h-screen">{children}</main>
         {showFooter && <Footer />}
+                <SpeedInsights />
+
       </body>
     </html>
   );
