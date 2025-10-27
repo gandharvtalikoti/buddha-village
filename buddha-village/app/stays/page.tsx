@@ -268,7 +268,7 @@ function StayCard({ stay, onClick }: StayCardProps) {
         <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[rgb(255,206,41)] transition-colors">
           {stay.name}
         </h3>
-        <p className="text-base text-[rgb(255,206,41)] mb-3 font-medium">{stay.tagline}</p>
+        <p className="text-base text-[rgb(255,206,41)] mb-3 font-bold">{stay.tagline}</p>
         <p className="text-sm text-gray-500 mb-3 font-medium">{stay.subtitle}</p>
         <p className="text-gray-600 mb-4 line-clamp-2">{stay.description}</p>
         
@@ -455,7 +455,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
           {/* Left Column - Info */}
           <div className="md:col-span-2">
             <h1 className="text-5xl font-bold text-gray-900 mb-2">{stay.name}</h1>
-            <p className="text-2xl text-[rgb(255,206,41)] mb-6 font-medium">{stay.tagline}</p>
+            <p className="text-2xl text-[rgb(255,206,41)] mb-6 font-bold">{stay.tagline}</p>
             <p className="text-xl text-gray-600 mb-6">{stay.subtitle}</p>
             
             <div className="flex flex-wrap gap-4 mb-8">
