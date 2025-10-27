@@ -1,9 +1,30 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
-const stays = [
+interface PricingTier {
+  guests: number;
+  price: string;
+  included: boolean;
+}
+
+interface Stay {
+  id: string;
+  name: string;
+  subtitle: string;
+  type: 'cottage' | 'room' | 'tent';
+  capacity: number;
+  beds: string;
+  description: string;
+  thumbnail: string;
+  images: string[];
+  pricing: {
+    weekend: PricingTier[];
+    weekday: PricingTier[];
+  };
+}
+
+const stays: Stay[] = [
   {
     id: 'dhyana',
     name: 'DHYANA',
@@ -202,8 +223,13 @@ const stays = [
   },
 ];
 
-function StayCard({ stay, onClick }) {
-  const getTypeColor = (type) => {
+interface StayCardProps {
+  stay: Stay;
+  onClick: () => void;
+}
+
+function StayCard({ stay, onClick }: StayCardProps) {
+  const getTypeColor = (type: 'cottage' | 'room' | 'tent'): string => {
     switch (type) {
       case 'cottage': return 'bg-amber-500';
       case 'tent': return 'bg-green-500';
@@ -211,7 +237,7 @@ function StayCard({ stay, onClick }) {
     }
   };
 
-  const getTypeIcon = (type) => {
+  const getTypeIcon = (type: 'cottage' | 'room' | 'tent'): string => {
     switch (type) {
       case 'cottage': return '🏡';
       case 'tent': return '⛺';
@@ -220,11 +246,7 @@ function StayCard({ stay, onClick }) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.5 }}
+    <div
       onClick={onClick}
       className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
     >
@@ -266,12 +288,12 @@ function StayCard({ stay, onClick }) {
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function StaysPage() {
-  const [selectedStay, setSelectedStay] = useState(null);
+  const [selectedStay, setSelectedStay] = useState<Stay | null>(null);
 
   if (selectedStay) {
     return <StayDetailPage stay={selectedStay} onBack={() => setSelectedStay(null)} />;
@@ -282,21 +304,12 @@ export default function StaysPage() {
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-amber-600 to-amber-500 text-white py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-4"
-          >
+          <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Buddha Village Stays
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-amber-100 max-w-3xl mx-auto"
-          >
+          </h1>
+          <p className="text-xl md:text-2xl text-amber-100 max-w-3xl mx-auto">
             Find your peaceful sanctuary in the heart of nature
-          </motion.p>
+          </p>
         </div>
       </div>
 
@@ -327,12 +340,7 @@ export default function StaysPage() {
 
       {/* Pet Stay Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-3xl p-8 shadow-xl"
-        >
+        <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-3xl p-8 shadow-xl">
           <div className="flex items-center gap-4 mb-4">
             <span className="text-5xl">🐾</span>
             <h2 className="text-3xl font-bold">Pet-Friendly Stay</h2>
@@ -346,7 +354,7 @@ export default function StaysPage() {
               <li>• Milk available on request</li>
             </ul>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* Contact CTA */}
@@ -369,8 +377,12 @@ export default function StaysPage() {
   );
 }
 
-// Separate Detail Page Component
-function StayDetailPage({ stay, onBack }) {
+interface StayDetailPageProps {
+  stay: Stay;
+  onBack: () => void;
+}
+
+function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
   const [currentImg, setCurrentImg] = useState(0);
 
   return (
@@ -388,38 +400,37 @@ function StayDetailPage({ stay, onBack }) {
         </div>
       </div>
 
-{/* Image Carousel - FIXED ARROW POSITION */}
-<div className="relative h-[75vh] md:h-[85vh] bg-black overflow-hidden rounded-xl">
-  <img
-    src={stay.images[currentImg]}
-    alt={`${stay.name} ${currentImg + 1}`}
-    className="w-full h-full object-contain"
-  />
+      {/* Image Carousel */}
+      <div className="relative h-[75vh] md:h-[85vh] bg-black overflow-hidden rounded-xl">
+        <img
+          src={stay.images[currentImg]}
+          alt={`${stay.name} ${currentImg + 1}`}
+          className="w-full h-full object-contain"
+        />
 
-  {/* Navigation Arrows */}
-  {stay.images.length > 1 && (
-    <>
-      <button
-        onClick={() => setCurrentImg((currentImg - 1 + stay.images.length) % stay.images.length)}
-        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
-      >
-        <span className="text-2xl font-bold">‹</span>
-      </button>
-      <button
-        onClick={() => setCurrentImg((currentImg + 1) % stay.images.length)}
-        className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
-      >
-        <span className="text-2xl font-bold">›</span>
-      </button>
-    </>
-  )}
+        {/* Navigation Arrows */}
+        {stay.images.length > 1 && (
+          <>
+            <button
+              onClick={() => setCurrentImg((currentImg - 1 + stay.images.length) % stay.images.length)}
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+            >
+              <span className="text-2xl font-bold">‹</span>
+            </button>
+            <button
+              onClick={() => setCurrentImg((currentImg + 1) % stay.images.length)}
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+            >
+              <span className="text-2xl font-bold">›</span>
+            </button>
+          </>
+        )}
 
-  {/* Image Counter */}
-  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-5 py-2 rounded-full text-sm font-medium">
-    {currentImg + 1} / {stay.images.length}
-  </div>
-</div>
-
+        {/* Image Counter */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-5 py-2 rounded-full text-sm font-medium">
+          {currentImg + 1} / {stay.images.length}
+        </div>
+      </div>
 
       {/* Thumbnails */}
       <div className="max-w-7xl mx-auto px-4 py-6">
