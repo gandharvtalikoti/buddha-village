@@ -198,8 +198,12 @@ export default function ImageCarousel() {
             isPortrait={true}
           />
         </div>
-      </div>
+          {/* <h1 className="text-2xl md:text-6xl font-bold text-black">
+  LOVE, LIFE, LIVE
+</h1> */}
 
+      </div>
+   
       {/* Row 3 - Full-width Hero Landscape */}
       <div className="relative">
         <ThumbnailCarousel

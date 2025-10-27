@@ -35,7 +35,6 @@ const stays: Stay[] = [
     description: 'Experience tranquility in our spacious lake-view duplex cottage, perfect for families and groups seeking serenity.',
     thumbnail: '/images/stays/cottage1.jpg',
     images: [
-      // '/images/stays/dhyana.png',
       '/images/stays/cottage1.jpg',
       '/images/stays/cottage2.jpg',
       '/images/stays/cottage3.jpg',
@@ -67,7 +66,6 @@ const stays: Stay[] = [
     description: 'Spacious wooden room with twin king beds, ideal for families or two couples traveling together.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
-      // '/images/stays/vitarka.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
@@ -96,7 +94,6 @@ const stays: Stay[] = [
     description: 'Comfortable wooden room with flexible sleeping arrangements, perfect for small families.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
-      // '/images/stays/varada.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -124,7 +121,6 @@ const stays: Stay[] = [
     description: 'Cozy wooden retreat with garden views and versatile sleeping options for your comfort.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
-      // '/images/stays/abhaya.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -152,7 +148,6 @@ const stays: Stay[] = [
     description: 'Our most spacious wooden room, designed for larger groups seeking comfort and togetherness.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
-      // '/images/stays/dharmachakra.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
@@ -231,7 +226,7 @@ interface StayCardProps {
 function StayCard({ stay, onClick }: StayCardProps) {
   const getTypeColor = (type: 'cottage' | 'room' | 'tent'): string => {
     switch (type) {
-      case 'cottage': return 'bg-amber-500';
+      case 'cottage': return 'bg-[rgb(255,206,41)]';
       case 'tent': return 'bg-green-500';
       default: return 'bg-blue-500';
     }
@@ -256,7 +251,7 @@ function StayCard({ stay, onClick }: StayCardProps) {
           alt={stay.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className={`absolute top-4 left-4 ${getTypeColor(stay.type)} text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2`}>
+        <div className={`absolute top-4 left-4 ${getTypeColor(stay.type)} text-gray-900 px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg flex items-center gap-2`}>
           <span>{getTypeIcon(stay.type)}</span>
           <span>{stay.type.charAt(0).toUpperCase() + stay.type.slice(1)}</span>
         </div>
@@ -266,7 +261,7 @@ function StayCard({ stay, onClick }: StayCardProps) {
       </div>
       
       <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-amber-600 transition-colors">
+        <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[rgb(255,206,41)] transition-colors">
           {stay.name}
         </h3>
         <p className="text-sm text-gray-500 mb-3 font-medium">{stay.subtitle}</p>
@@ -280,10 +275,10 @@ function StayCard({ stay, onClick }: StayCardProps) {
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div>
             <p className="text-xs text-gray-500">Starting from</p>
-            <p className="text-2xl font-bold text-amber-600">{stay.pricing.weekday[0].price}</p>
+            <p className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekday[0].price}</p>
             <p className="text-xs text-gray-500">per night</p>
           </div>
-          <button className="bg-amber-500 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-amber-600 transition-colors shadow-md">
+          <button className="bg-[rgb(255,206,41)] text-gray-900 px-6 py-2.5 rounded-full font-semibold hover:bg-[rgb(245,196,31)] transition-colors shadow-md">
             View Details →
           </button>
         </div>
@@ -300,14 +295,14 @@ export default function StaysPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[rgb(255,246,220)] to-white">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-amber-600 to-amber-500 text-white py-10 px-4">
+      <div className="relative bg-[rgb(255,206,41)] text-gray-900 py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
             Buddha Village Stays
           </h1>
-          <p className="text-xl md:text-2xl text-amber-100 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-800 max-w-3xl mx-auto">
             Find your peaceful sanctuary in the heart of nature
           </p>
         </div>
@@ -392,7 +387,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-gray-700 hover:text-amber-600 font-semibold transition-colors"
+            className="flex items-center gap-2 text-gray-700 hover:text-[rgb(255,206,41)] font-semibold transition-colors"
           >
             <span className="text-xl">←</span>
             <span>Back to All Stays</span>
@@ -413,13 +408,13 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
           <>
             <button
               onClick={() => setCurrentImg((currentImg - 1 + stay.images.length) % stay.images.length)}
-              className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[rgb(255,206,41)] hover:text-gray-900 text-black p-3 rounded-full shadow-lg transition-all"
             >
               <span className="text-2xl font-bold">‹</span>
             </button>
             <button
               onClick={() => setCurrentImg((currentImg + 1) % stay.images.length)}
-              className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[rgb(255,206,41)] hover:text-gray-900 text-black p-3 rounded-full shadow-lg transition-all"
             >
               <span className="text-2xl font-bold">›</span>
             </button>
@@ -440,7 +435,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
               key={idx}
               onClick={() => setCurrentImg(idx)}
               className={`flex-shrink-0 w-28 h-24 rounded-lg overflow-hidden border-3 transition-all ${
-                idx === currentImg ? 'border-amber-500 scale-105 ring-2 ring-amber-300' : 'border-gray-200 opacity-60 hover:opacity-100'
+                idx === currentImg ? 'border-[rgb(255,206,41)] scale-105 ring-2 ring-[rgb(255,226,141)]' : 'border-gray-200 opacity-60 hover:opacity-100'
               }`}
             >
               <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
@@ -473,19 +468,19 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
             {/* Pricing Tables */}
             <div className="space-y-8">
               {/* Weekend Pricing */}
-              <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border-2 border-amber-200">
-                <h3 className="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2">
+              <div className="bg-gradient-to-br from-[rgb(255,246,220)] to-[rgb(255,236,180)] rounded-2xl p-8 border-2 border-[rgb(255,206,41)]">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <span>🌟</span>
                   Weekend & Festival Pricing
                 </h3>
-                <p className="text-sm text-amber-800 mb-6 font-medium">
+                <p className="text-sm text-gray-800 mb-6 font-medium">
                   Includes buffet: Hi-tea, Dinner & Breakfast
                 </p>
                 <div className="space-y-3">
                   {stay.pricing.weekend.map((p, idx) => (
                     <div key={idx} className="flex justify-between items-center bg-white/70 px-6 py-4 rounded-xl">
                       <span className="font-semibold text-gray-700">{p.guests} Guest{p.guests > 1 ? 's' : ''}</span>
-                      <span className="text-2xl font-bold text-amber-600">{p.price}</span>
+                      <span className="text-2xl font-bold text-[rgb(255,206,41)]">{p.price}</span>
                     </div>
                   ))}
                 </div>
@@ -517,7 +512,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
             <div className="sticky top-24 bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-8">
               <div className="text-center mb-6">
                 <p className="text-gray-600 mb-2">Starting from</p>
-                <p className="text-4xl font-bold text-amber-600 mb-1">{stay.pricing.weekday[0].price}</p>
+                <p className="text-4xl font-bold text-[rgb(255,206,41)] mb-1">{stay.pricing.weekday[0].price}</p>
                 <p className="text-sm text-gray-500">per night</p>
               </div>
 
