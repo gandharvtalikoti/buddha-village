@@ -183,12 +183,10 @@ const stays: Stay[] = [
     capacity: 2,
     beds: 'Sleeping Bags & Pillows',
     description: 'Embrace nature with our comfortable tent stay, complete with quality sleeping arrangements.',
-    thumbnail: '/images/stays/cottage1.jpg',
+    thumbnail: '/images/stays/t2.jpg',
     images: [
-      '/images/stays/anjali.png',
-      '/images/stays/cottage1.jpg',
-      '/images/stays/cottage2.jpg',
-      '/images/stays/cottage3.jpg',
+      '/images/stays/t1.jpg',
+      '/images/stays/t2.jpg',
     ],
     pricing: {
       weekend: [
@@ -208,12 +206,10 @@ const stays: Stay[] = [
     capacity: 2,
     beds: 'Sleeping Bags & Pillows',
     description: 'Sleep under the stars in our well-equipped tent with all essentials for a memorable night.',
-    thumbnail: '/images/stays/cottage2.jpg',
+    thumbnail: '/images/stays/t1.jpg',
     images: [
-      '/images/stays/karana.png',
-      '/images/stays/cottage2.jpg',
-      '/images/stays/cottage3.jpg',
-      '/images/stays/cottage4.jpg',
+      '/images/stays/t1.png',
+      '/images/stays/t2.jpg',
     ],
     pricing: {
       weekend: [
