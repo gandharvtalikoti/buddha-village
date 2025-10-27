@@ -27,7 +27,7 @@ interface Stay {
 const stays: Stay[] = [
   {
     id: 'dhyana',
-    name: 'DHYANA',
+    name: 'DHYANA - Stillness Within Self',
     subtitle: 'Wooden Duplex Cottage / Lake Cottage',
     type: 'cottage',
     capacity: 5,
@@ -35,7 +35,7 @@ const stays: Stay[] = [
     description: 'Experience tranquility in our spacious lake-view duplex cottage, perfect for families and groups seeking serenity.',
     thumbnail: '/images/stays/cottage1.jpg',
     images: [
-      '/images/stays/dhyana.png',
+      // '/images/stays/dhyana.png',
       '/images/stays/cottage1.jpg',
       '/images/stays/cottage2.jpg',
       '/images/stays/cottage3.jpg',
@@ -59,7 +59,7 @@ const stays: Stay[] = [
   },
   {
     id: 'vitarka',
-    name: 'VITARKA',
+    name: 'VITARKA - Circle of Knowledge',
     subtitle: 'Wooden Room - 1',
     type: 'room',
     capacity: 4,
@@ -67,7 +67,7 @@ const stays: Stay[] = [
     description: 'Spacious wooden room with twin king beds, ideal for families or two couples traveling together.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
-      '/images/stays/vitarka.png',
+      // '/images/stays/vitarka.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
@@ -88,7 +88,7 @@ const stays: Stay[] = [
   },
   {
     id: 'varada',
-    name: 'VARADA',
+    name: 'VARADA - Grace in Generosity',
     subtitle: 'Wooden Room - 2',
     type: 'room',
     capacity: 4,
@@ -96,7 +96,7 @@ const stays: Stay[] = [
     description: 'Comfortable wooden room with flexible sleeping arrangements, perfect for small families.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
-      '/images/stays/varada.png',
+      // '/images/stays/varada.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -116,7 +116,7 @@ const stays: Stay[] = [
   },
   {
     id: 'abhaya',
-    name: 'ABHAYA',
+    name: 'ABHAYA - Rooted in Awakening',
     subtitle: 'Wooden Room - 3',
     type: 'room',
     capacity: 4,
@@ -124,7 +124,7 @@ const stays: Stay[] = [
     description: 'Cozy wooden retreat with garden views and versatile sleeping options for your comfort.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
-      '/images/stays/abhaya.png',
+      // '/images/stays/abhaya.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -144,7 +144,7 @@ const stays: Stay[] = [
   },
   {
     id: 'dharmachakra',
-    name: 'DHARMACHAKRA',
+    name: 'DHARMACHAKRA - Cycle of Enlightened Wisdom',
     subtitle: 'Wooden Room - 4',
     type: 'room',
     capacity: 6,
@@ -152,7 +152,7 @@ const stays: Stay[] = [
     description: 'Our most spacious wooden room, designed for larger groups seeking comfort and togetherness.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
-      '/images/stays/dharmachakra.png',
+      // '/images/stays/dharmachakra.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
