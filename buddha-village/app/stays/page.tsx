@@ -14,6 +14,7 @@ const stays = [
     description: 'Experience tranquility in our spacious lake-view duplex cottage, perfect for families and groups seeking serenity.',
     thumbnail: '/images/stays/cottage1.jpg',
     images: [
+      '/images/stays/dhyana.png',
       '/images/stays/cottage1.jpg',
       '/images/stays/cottage2.jpg',
       '/images/stays/cottage3.jpg',
@@ -45,6 +46,7 @@ const stays = [
     description: 'Spacious wooden room with twin king beds, ideal for families or two couples traveling together.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
+      '/images/stays/vitarka.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
@@ -73,6 +75,7 @@ const stays = [
     description: 'Comfortable wooden room with flexible sleeping arrangements, perfect for small families.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
+      '/images/stays/varada.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -100,6 +103,7 @@ const stays = [
     description: 'Cozy wooden retreat with garden views and versatile sleeping options for your comfort.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
+      '/images/stays/abhaya.png',
       '/images/stays/g2a.jpg',
       '/images/stays/g2b.jpg',
       '/images/stays/g2c.jpg',
@@ -127,6 +131,7 @@ const stays = [
     description: 'Our most spacious wooden room, designed for larger groups seeking comfort and togetherness.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
+      '/images/stays/dharmachakra.png',
       '/images/stays/g1a.jpg',
       '/images/stays/g1b.jpg',
       '/images/stays/g1c.jpg',
@@ -157,6 +162,7 @@ const stays = [
     description: 'Embrace nature with our comfortable tent stay, complete with quality sleeping arrangements.',
     thumbnail: '/images/stays/cottage1.jpg',
     images: [
+      '/images/stays/anjali.png',
       '/images/stays/cottage1.jpg',
       '/images/stays/cottage2.jpg',
       '/images/stays/cottage3.jpg',
@@ -180,6 +186,7 @@ const stays = [
     description: 'Sleep under the stars in our well-equipped tent with all essentials for a memorable night.',
     thumbnail: '/images/stays/cottage2.jpg',
     images: [
+      '/images/stays/karana.png',
       '/images/stays/cottage2.jpg',
       '/images/stays/cottage3.jpg',
       '/images/stays/cottage4.jpg',
@@ -381,47 +388,48 @@ function StayDetailPage({ stay, onBack }) {
         </div>
       </div>
 
-      {/* Image Carousel */}
-      <div className="relative h-[60vh] bg-gray-900">
-        <img
-          src={stay.images[currentImg]}
-          alt={`${stay.name} ${currentImg + 1}`}
-          className="w-full h-full object-cover"
-        />
-        
-        {/* Navigation Arrows */}
-        {stay.images.length > 1 && (
-          <>
-            <button
-              onClick={() => setCurrentImg((currentImg - 1 + stay.images.length) % stay.images.length)}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-amber-500 hover:text-white text-black p-4 rounded-full shadow-xl transition-all"
-            >
-              <span className="text-2xl font-bold">‹</span>
-            </button>
-            <button
-              onClick={() => setCurrentImg((currentImg + 1) % stay.images.length)}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-amber-500 hover:text-white text-black p-4 rounded-full shadow-xl transition-all"
-            >
-              <span className="text-2xl font-bold">›</span>
-            </button>
-          </>
-        )}
+{/* Image Carousel - FIXED ARROW POSITION */}
+<div className="relative h-[75vh] md:h-[85vh] bg-black overflow-hidden rounded-xl">
+  <img
+    src={stay.images[currentImg]}
+    alt={`${stay.name} ${currentImg + 1}`}
+    className="w-full h-full object-contain"
+  />
 
-        {/* Image Counter */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm">
-          {currentImg + 1} / {stay.images.length}
-        </div>
-      </div>
+  {/* Navigation Arrows */}
+  {stay.images.length > 1 && (
+    <>
+      <button
+        onClick={() => setCurrentImg((currentImg - 1 + stay.images.length) % stay.images.length)}
+        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+      >
+        <span className="text-2xl font-bold">‹</span>
+      </button>
+      <button
+        onClick={() => setCurrentImg((currentImg + 1) % stay.images.length)}
+        className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-amber-500 hover:text-white text-black p-3 rounded-full shadow-lg transition-all"
+      >
+        <span className="text-2xl font-bold">›</span>
+      </button>
+    </>
+  )}
+
+  {/* Image Counter */}
+  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-5 py-2 rounded-full text-sm font-medium">
+    {currentImg + 1} / {stay.images.length}
+  </div>
+</div>
+
 
       {/* Thumbnails */}
       <div className="max-w-7xl mx-auto px-4 py-6">
-        <div className="flex gap-3 overflow-x-auto pb-2">
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
           {stay.images.map((img, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentImg(idx)}
-              className={`flex-shrink-0 w-24 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                idx === currentImg ? 'border-amber-500 scale-105' : 'border-gray-200 opacity-60 hover:opacity-100'
+              className={`flex-shrink-0 w-28 h-24 rounded-lg overflow-hidden border-3 transition-all ${
+                idx === currentImg ? 'border-amber-500 scale-105 ring-2 ring-amber-300' : 'border-gray-200 opacity-60 hover:opacity-100'
               }`}
             >
               <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
