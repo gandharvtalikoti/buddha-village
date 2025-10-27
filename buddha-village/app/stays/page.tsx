@@ -11,6 +11,7 @@ interface PricingTier {
 interface Stay {
   id: string;
   name: string;
+  tagline: string;
   subtitle: string;
   type: 'cottage' | 'room' | 'tent';
   capacity: number;
@@ -27,7 +28,8 @@ interface Stay {
 const stays: Stay[] = [
   {
     id: 'dhyana',
-    name: 'DHYANA - Stillness Within Self',
+    name: 'DHYANA',
+    tagline: 'Stillness Within Self',
     subtitle: 'Wooden Duplex Cottage / Lake Cottage',
     type: 'cottage',
     capacity: 5,
@@ -58,7 +60,8 @@ const stays: Stay[] = [
   },
   {
     id: 'vitarka',
-    name: 'VITARKA - Circle of Knowledge',
+    name: 'VITARKA',
+    tagline: 'Circle of Knowledge',
     subtitle: 'Wooden Room - 1',
     type: 'room',
     capacity: 4,
@@ -86,7 +89,8 @@ const stays: Stay[] = [
   },
   {
     id: 'varada',
-    name: 'VARADA - Grace in Generosity',
+    name: 'VARADA',
+    tagline: 'Grace in Generosity',
     subtitle: 'Wooden Room - 2',
     type: 'room',
     capacity: 4,
@@ -113,7 +117,8 @@ const stays: Stay[] = [
   },
   {
     id: 'abhaya',
-    name: 'ABHAYA - Rooted in Awakening',
+    name: 'ABHAYA',
+    tagline: 'Rooted in Awakening',
     subtitle: 'Wooden Room - 3',
     type: 'room',
     capacity: 4,
@@ -140,7 +145,8 @@ const stays: Stay[] = [
   },
   {
     id: 'dharmachakra',
-    name: 'DHARMACHAKRA - Cycle of Enlightened Wisdom',
+    name: 'DHARMACHAKRA',
+    tagline: 'Cycle of Enlightened Wisdom',
     subtitle: 'Wooden Room - 4',
     type: 'room',
     capacity: 6,
@@ -171,6 +177,7 @@ const stays: Stay[] = [
   {
     id: 'anjali',
     name: 'ANJALI',
+    tagline: 'Offering with Reverence',
     subtitle: 'Tent Stay',
     type: 'tent',
     capacity: 2,
@@ -195,6 +202,7 @@ const stays: Stay[] = [
   {
     id: 'karana',
     name: 'KARANA',
+    tagline: 'Compassion in Action',
     subtitle: 'Tent Stay',
     type: 'tent',
     capacity: 2,
@@ -264,6 +272,7 @@ function StayCard({ stay, onClick }: StayCardProps) {
         <h3 className="text-2xl font-bold text-gray-900 mb-1 group-hover:text-[rgb(255,206,41)] transition-colors">
           {stay.name}
         </h3>
+        <p className="text-base text-[rgb(255,206,41)] mb-3 font-medium">{stay.tagline}</p>
         <p className="text-sm text-gray-500 mb-3 font-medium">{stay.subtitle}</p>
         <p className="text-gray-600 mb-4 line-clamp-2">{stay.description}</p>
         
@@ -449,7 +458,8 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
         <div className="grid md:grid-cols-3 gap-12">
           {/* Left Column - Info */}
           <div className="md:col-span-2">
-            <h1 className="text-5xl font-bold text-gray-900 mb-3">{stay.name}</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-2">{stay.name}</h1>
+            <p className="text-2xl text-[rgb(255,206,41)] mb-6 font-medium">{stay.tagline}</p>
             <p className="text-xl text-gray-600 mb-6">{stay.subtitle}</p>
             
             <div className="flex flex-wrap gap-4 mb-8">
