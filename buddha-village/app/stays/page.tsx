@@ -208,7 +208,7 @@ const stays: Stay[] = [
     description: 'Sleep under the stars in our well-equipped tent with all essentials for a memorable night.',
     thumbnail: '/images/stays/t1.jpg',
     images: [
-      '/images/stays/t1.png',
+      '/images/stays/t1.jpg',
       '/images/stays/t2.jpg',
     ],
     pricing: {
