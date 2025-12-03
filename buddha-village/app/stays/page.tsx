@@ -65,7 +65,7 @@ const stays: Stay[] = [
     subtitle: 'Wooden Room - 1',
     type: 'room',
     capacity: 4,
-    beds: '2 King Size Beds',
+    beds: '1 King Size Beds + 1 Queen Sofa cum Bed',
     description: 'Spacious wooden room with twin king beds, ideal for families or two couples traveling together.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
@@ -94,7 +94,7 @@ const stays: Stay[] = [
     subtitle: 'Wooden Room - 2',
     type: 'room',
     capacity: 5,
-    beds: '1 King Bed + King Sofa Cum Bed',
+    beds: '2 King Size Beds + 1 Single Bed',
     description: 'Comfortable wooden room with flexible sleeping arrangements, perfect for small families.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
@@ -122,7 +122,7 @@ const stays: Stay[] = [
     subtitle: 'Wooden Room - 3',
     type: 'room',
     capacity: 6,
-    beds: '1 King Bed + Queen Sofa Cum Bed',
+    beds: '1 King Size Bed + 2 Queen size Sofa Cum Beds',
     description: 'Cozy wooden retreat with garden views and versatile sleeping options for your comfort.',
     thumbnail: '/images/stays/g2a.jpg',
     images: [
@@ -150,7 +150,7 @@ const stays: Stay[] = [
     subtitle: 'Wooden Room - 4',
     type: 'room',
     capacity: 6,
-    beds: '1 King Bed + 2 Queen Sofa Cum Beds',
+    beds: '3 Queen Size Beds',
     description: 'Our most spacious wooden room, designed for larger groups seeking comfort and togetherness.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
