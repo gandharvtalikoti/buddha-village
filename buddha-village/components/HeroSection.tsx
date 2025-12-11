@@ -36,7 +36,7 @@ export default function HeroSection() {
   playsInline
   className="w-full h-full object-cover"
 >
-  <source src="https://res.cloudinary.com/dtwq72bil/video/upload/buddha-4_1_xssukg.mp4" type="video/mp4" />
+  <source src="https://player.cloudinary.com/embed/?cloud_name=dpdeyg8er&public_id=Buddha_Village_1_xrqvrm&profile=cld-default" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
   {/* Gradient overlay if needed */}
