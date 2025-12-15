@@ -64,8 +64,8 @@ const stays: Stay[] = [
     tagline: 'Circle of Knowledge',
     subtitle: 'Wooden Room - 1',
     type: 'room',
-    capacity: 4,
-    beds: '1 King Size Beds + 1 Queen Sofa cum Bed',
+    capacity: 6,
+    beds: '1 King Size Bed + 2 Queen Sofa cum Beds',
     description: 'Spacious wooden room with twin king beds, ideal for families or two couples traveling together.',
     thumbnail: '/images/stays/g1a.jpg',
     images: [
@@ -222,6 +222,7 @@ const stays: Stay[] = [
       ],
     },
   },
+ 
 ];
 
 interface StayCardProps {
