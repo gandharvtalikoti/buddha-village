@@ -313,7 +313,7 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Info Banner
+      {/* Info Banner */}
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
           <div className="flex items-start gap-4">
@@ -321,13 +321,14 @@ export default function StaysPage() {
             <div>
               <h3 className="font-bold text-blue-900 mb-2">Pricing Information</h3>
               <p className="text-blue-800 text-sm leading-relaxed">
-                <strong>Weekend & Festival dates:</strong> Buffet meals included (Hi-tea, Dinner & Breakfast)<br />
-                <strong>Weekdays (Mon-Thu):</strong> À la carte menu available for order
+                <strong>All bookings:</strong> Complimentary breakfast included<br />
+                <strong>Meals:</strong> À la carte menu available for lunch & dinner<br />
+                <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans
               </p>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
       {/* Stays Grid */}
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -480,7 +481,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   Weekend & Festival Pricing
                 </h3>
                 <p className="text-sm text-gray-800 mb-6 font-medium">
-                  Includes buffet: Hi-tea, Dinner & Breakfast
+                  Includes complimentary breakfast
                 </p>
                 <div className="space-y-3">
                   {stay.pricing.weekend.map((p, idx) => (
@@ -499,7 +500,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   Weekday Pricing (Mon-Thu)
                 </h3>
                 <p className="text-sm text-blue-800 mb-6 font-medium">
-                  À la carte menu available for order
+                  Includes complimentary breakfast
                 </p>
                 <div className="space-y-3">
                   {stay.pricing.weekday.map((p, idx) => (
@@ -508,6 +509,19 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                       <span className="text-2xl font-bold text-blue-600">{p.price}</span>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Bulk Booking Note */}
+              <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200">
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">📞</span>
+                  <div>
+                    <h4 className="font-bold text-purple-900 mb-2">Bulk Bookings</h4>
+                    <p className="text-sm text-purple-800">
+                      Planning a group event or retreat? We offer special packages for bulk bookings with customized plans. Please call or message us to discuss your requirements.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
