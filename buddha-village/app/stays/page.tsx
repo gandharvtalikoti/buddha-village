@@ -246,9 +246,9 @@ const stays: Stay[] = [
     },
   },
   {
-    id: 'karuna',
-    name: 'KARUNA',
-    tagline: 'The Touch of Kindness',
+    id: 'ananda',
+    name: 'ANANDA',
+    tagline: 'Quiet Joy',
     subtitle: 'Tent Stay',
     type: 'tent',
     capacity: 2,
