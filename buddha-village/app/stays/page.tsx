@@ -82,7 +82,7 @@ const stays: Stay[] = [
         { guests: 4, price: '₹12,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹4,000', included: false },
+        { guests: 2, price: '₹6,000', included: false },
         { guests: 4, price: '₹7,000', included: false },
       ],
     },
@@ -321,7 +321,7 @@ export default function StaysPage() {
             <div>
               <h3 className="font-bold text-blue-900 mb-2">Pricing Information</h3>
               <p className="text-blue-800 text-sm leading-relaxed">
-                <strong>All bookings:</strong> Complimentary breakfast included<br />
+                <strong>Weekend bookings:</strong> Complimentary breakfast included<br />
                 <strong>Meals:</strong> À la carte menu available for lunch & dinner<br />
                 <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans
               </p>
@@ -480,7 +480,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   <span>🌟</span>
                   Weekend & Festival Pricing
                 </h3>
-                <p className="text-sm text-gray-800 mb-6 font-medium">
+                <p className="text-m text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
                 </p>
                 <div className="space-y-3">
@@ -499,9 +499,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   <span>📅</span>
                   Weekday Pricing (Mon-Thu)
                 </h3>
-                <p className="text-sm text-blue-800 mb-6 font-medium">
-                  Includes complimentary breakfast
-                </p>
+              
                 <div className="space-y-3">
                   {stay.pricing.weekday.map((p, idx) => (
                     <div key={idx} className="flex justify-between items-center bg-white/70 px-6 py-4 rounded-xl">
