@@ -387,7 +387,7 @@ export default function StaysPage() {
 
       {/* Cottages Section */}
       {cottages.length > 0 && (
-        <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="max-w-6xl mx-auto px-2 py-12">
           <div className="flex items-center gap-3 mb-8">
             <span className="text-4xl">🏡</span>
             <h2 className="text-4xl font-bold text-gray-900">Lake View Duplex Cottages</h2>
