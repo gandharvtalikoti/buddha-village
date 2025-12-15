@@ -253,7 +253,7 @@ const stays: Stay[] = [
     type: 'tent',
     capacity: 2,
     beds: 'Sleeping Bags & Pillows',
-    description: 'A warm, nurturing space created to comfort the heart and soothe the soul.',
+    description: 'An open, light-filled room that gives you room to breathe, think, and unwind.',
     thumbnail: '/images/stays/t1.jpg',
     images: [
       '/images/stays/t1.jpg',
