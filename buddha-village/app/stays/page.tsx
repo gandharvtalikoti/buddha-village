@@ -480,7 +480,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
               <div className="bg-gradient-to-br from-[rgb(255,246,220)] to-[rgb(255,236,180)] rounded-2xl p-8 border-2 border-[rgb(255,206,41)]">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <span>🌟</span>
-                  Weekend & Festival Pricing
+                  Weekend (Fri-Sun) & Festival Pricing
                 </h3>
                 <p className="text-m text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
