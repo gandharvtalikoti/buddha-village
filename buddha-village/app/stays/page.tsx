@@ -110,8 +110,8 @@ const stays: Stay[] = [
         { guests: 4, price: '₹12,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹4,000', included: false },
-        { guests: 4, price: '₹7,000', included: false },
+        { guests: 2, price: '₹6,000', included: false },
+        { guests: 4, price: '₹8,000', included: false },
       ],
     },
   },
