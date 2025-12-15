@@ -108,10 +108,12 @@ const stays: Stay[] = [
       weekend: [
         { guests: 2, price: '₹8,000', included: true },
         { guests: 4, price: '₹12,000', included: true },
+        { guests: 5, price: '₹14,000', included: true },
       ],
       weekday: [
         { guests: 2, price: '₹6,000', included: false },
         { guests: 4, price: '₹8,000', included: false },
+        { guests: 5, price: '₹10,000', included: false },
       ],
     },
   },
@@ -343,6 +345,11 @@ function StayCard({ stay, onClick }: StayCardProps) {
 export default function StaysPage() {
   const [selectedStay, setSelectedStay] = useState<Stay | null>(null);
 
+  // Categorize stays by type
+  const cottages = stays.filter(stay => stay.type === 'cottage');
+  const rooms = stays.filter(stay => stay.type === 'room');
+  const tents = stays.filter(stay => stay.type === 'tent');
+
   if (selectedStay) {
     return <StayDetailPage stay={selectedStay} onBack={() => setSelectedStay(null)} />;
   }
@@ -378,14 +385,55 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Stays Grid */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {stays.map((stay) => (
-            <StayCard key={stay.id} stay={stay} onClick={() => setSelectedStay(stay)} />
-          ))}
+      {/* Cottages Section */}
+      {cottages.length > 0 && (
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-4xl">🏡</span>
+            <h2 className="text-4xl font-bold text-gray-900">Lake View Duplex Cottages</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Empty column for left */}
+            <div className="hidden md:block"></div>
+            {/* Center column with cottage */}
+            {cottages.map((stay) => (
+              <StayCard key={stay.id} stay={stay} onClick={() => setSelectedStay(stay)} />
+            ))}
+            {/* Empty column for right */}
+            <div className="hidden md:block"></div>
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Rooms Section */}
+      {rooms.length > 0 && (
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-4xl">🏠</span>
+            <h2 className="text-4xl font-bold text-gray-900">Garden View Rooms</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {rooms.map((stay) => (
+              <StayCard key={stay.id} stay={stay} onClick={() => setSelectedStay(stay)} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Tents Section */}
+      {tents.length > 0 && (
+        <div className="max-w-6xl mx-auto px-4 py-12">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="text-4xl">⛺</span>
+            <h2 className="text-4xl font-bold text-gray-900">Lake view Tents</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {tents.map((stay) => (
+              <StayCard key={stay.id} stay={stay} onClick={() => setSelectedStay(stay)} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Pet Stay Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
@@ -528,7 +576,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   <span>🌟</span>
                   Weekend (Fri-Sun) & Festival Pricing
                 </h3>
-                <p className="text-m text-gray-800 mb-6 font-medium">
+                <p className="text-sm text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
                 </p>
                 <div className="space-y-3">
@@ -547,7 +595,10 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   <span>📅</span>
                   Weekday Pricing (Mon-Thu)
                 </h3>
-              
+                <p className="text-sm text-gray-800 mb-6 font-medium">
+  Order from our Ala carte menu.
+</p>
+
                 <div className="space-y-3">
                   {stay.pricing.weekday.map((p, idx) => (
                     <div key={idx} className="flex justify-between items-center bg-white/70 px-6 py-4 rounded-xl">
