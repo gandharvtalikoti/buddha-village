@@ -192,10 +192,10 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: [
-        { guests: 2, price: '₹5,000', included: true },
+        { guests: 2, price: '₹4,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹3,000', included: false },
+        { guests: 2, price: '₹2,500', included: false },
       ],
     },
   },
@@ -215,10 +215,10 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: [
-        { guests: 2, price: '₹5,000', included: true },
+        { guests: 2, price: '₹4,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹3,000', included: false },
+        { guests: 2, price: '₹2,500', included: false },
       ],
     },
   },
@@ -238,10 +238,10 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: [
-        { guests: 2, price: '₹5,000', included: true },
+        { guests: 2, price: '₹4,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹3,000', included: false },
+        { guests: 2, price: '₹2,500', included: false },
       ],
     },
   },
@@ -261,10 +261,10 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: [
-        { guests: 2, price: '₹5,000', included: true },
+        { guests: 2, price: '₹4,000', included: true },
       ],
       weekday: [
-        { guests: 2, price: '₹3,000', included: false },
+        { guests: 2, price: '₹2,500', included: false },
       ],
     },
   },
