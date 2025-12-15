@@ -365,7 +365,7 @@ export default function StaysPage() {
           Message us your dates and group size, and our team will share the best options for you!
         </p>
         <a
-          href="https://wa.me/918095999833"
+          href="https://wa.me/918095998833"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-xl"
@@ -537,7 +537,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
               </div>
 
               <a
-                href="https://wa.me/918095999833"
+                href="https://wa.me/918095998833"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-green-500 text-white text-center py-4 rounded-full font-bold text-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-xl mb-4"

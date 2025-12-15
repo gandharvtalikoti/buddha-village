@@ -72,7 +72,7 @@ export default function ContactPage() {
           </p>
 
           <a
-            href="https://wa.me/918095999833"
+            href="https://wa.me/918095998833"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-green-500 text-white text-lg font-bold px-8 py-4 rounded-full shadow hover:bg-green-600 transition mb-4"
