@@ -222,7 +222,52 @@ const stays: Stay[] = [
       ],
     },
   },
- 
+  {
+    id: 'shanthi',
+    name: 'SHANTHI',
+    tagline: 'Peace Without Effort',
+    subtitle: 'Tent Stay',
+    type: 'tent',
+    capacity: 2,
+    beds: 'Sleeping Bags & Pillows',
+    description: 'A warm, nurturing space created to comfort the heart and soothe the soul.',
+    thumbnail: '/images/stays/t1.jpg',
+    images: [
+      '/images/stays/t1.jpg',
+      '/images/stays/t2.jpg',
+    ],
+    pricing: {
+      weekend: [
+        { guests: 2, price: '₹5,000', included: true },
+      ],
+      weekday: [
+        { guests: 2, price: '₹3,000', included: false },
+      ],
+    },
+  },
+  {
+    id: 'karuna',
+    name: 'KARUNA',
+    tagline: 'The Touch of Kindness',
+    subtitle: 'Tent Stay',
+    type: 'tent',
+    capacity: 2,
+    beds: 'Sleeping Bags & Pillows',
+    description: 'A warm, nurturing space created to comfort the heart and soothe the soul.',
+    thumbnail: '/images/stays/t1.jpg',
+    images: [
+      '/images/stays/t1.jpg',
+      '/images/stays/t2.jpg',
+    ],
+    pricing: {
+      weekend: [
+        { guests: 2, price: '₹5,000', included: true },
+      ],
+      weekday: [
+        { guests: 2, price: '₹3,000', included: false },
+      ],
+    },
+  },
 ];
 
 interface StayCardProps {
