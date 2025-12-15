@@ -313,7 +313,7 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Info Banner */}
+      {/* Info Banner
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
           <div className="flex items-start gap-4">
@@ -327,7 +327,7 @@ export default function StaysPage() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Stays Grid */}
       <div className="max-w-6xl mx-auto px-4 py-12">
