@@ -25,7 +25,7 @@ export default function FoodMenu() {
       </div>
 
       {/* Main Image Carousel */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl">
           <div className="relative h-[80vh] md:h-[85vh] bg-gray-100 overflow-hidden">
             <img
@@ -87,7 +87,7 @@ export default function FoodMenu() {
       </div>
 
       {/* Info Section */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
+      {/* <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="bg-gradient-to-r from-[rgb(255,206,41)] to-[rgb(255,186,21)] rounded-2xl p-8 shadow-xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -107,7 +107,7 @@ export default function FoodMenu() {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Additional Info */}
       <div className="max-w-6xl mx-auto px-4 py-8 pb-16">
@@ -116,17 +116,17 @@ export default function FoodMenu() {
             <div>
               <div className="text-3xl mb-2">🍽️</div>
               <h3 className="font-bold mb-2">À La Carte Menu</h3>
-              <p className="text-sm text-gray-300">Order exactly what you crave</p>
+              <p className="text-sm text-gray-600">Order exactly what you crave</p>
             </div>
             <div>
               <div className="text-3xl mb-2">🌿</div>
               <h3 className="font-bold mb-2">Fresh Ingredients</h3>
-              <p className="text-sm text-gray-300">Locally sourced & organic</p>
+              <p className="text-sm text-gray-600">Locally sourced & organic</p>
             </div>
             <div>
               <div className="text-3xl mb-2">👨‍🍳</div>
               <h3 className="font-bold mb-2">Expert Chefs</h3>
-              <p className="text-sm text-gray-300">Authentic flavors & recipes</p>
+              <p className="text-sm text-gray-600">Authentic flavors & recipes</p>
             </div>
           </div>
         </div>
