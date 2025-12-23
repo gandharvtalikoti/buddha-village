@@ -20,8 +20,14 @@ interface Stay {
   thumbnail: string;
   images: string[];
   pricing: {
-    weekend: PricingTier[];
-    weekday: PricingTier[];
+    weekend: {
+      baseTier: PricingTier;
+      additionalGuestPrice: string;
+    };
+    weekday: {
+      baseTier: PricingTier;
+      additionalGuestPrice: string;
+    };
   };
 }
 
@@ -46,16 +52,14 @@ const stays: Stay[] = [
       '/images/stays/cottage7.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹12,000', included: true },
-        { guests: 4, price: '₹18,000', included: true },
-        { guests: 5, price: '₹22,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹8,000', included: false },
-        { guests: 4, price: '₹12,000', included: false },
-        { guests: 5, price: '₹15,000', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹10,000', included: true },
+        additionalGuestPrice: '₹4,000'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹8,000', included: false },
+        additionalGuestPrice: '₹3,000'
+      },
     },
   },
   {
@@ -77,14 +81,14 @@ const stays: Stay[] = [
       '/images/stays/g1f.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹8,000', included: true },
-        { guests: 4, price: '₹12,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹6,000', included: false },
-        { guests: 4, price: '₹8,000', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹8,000', included: true },
+        additionalGuestPrice: '₹3,000'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹6,000', included: false },
+        additionalGuestPrice: '₹2,500'
+      },
     },
   },
   {
@@ -105,16 +109,14 @@ const stays: Stay[] = [
       '/images/stays/g2e.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹8,000', included: true },
-        { guests: 4, price: '₹12,000', included: true },
-        { guests: 5, price: '₹14,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹6,000', included: false },
-        { guests: 4, price: '₹8,000', included: false },
-        { guests: 5, price: '₹10,000', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹8,000', included: true },
+        additionalGuestPrice: '₹3,000'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹6,000', included: false },
+        additionalGuestPrice: '₹2,500'
+      },
     },
   },
   {
@@ -135,16 +137,14 @@ const stays: Stay[] = [
       '/images/stays/g2e.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹8,000', included: true },
-        { guests: 4, price: '₹12,000', included: true },
-        { guests: 6, price: '₹15,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹6,000', included: false },
-        { guests: 4, price: '₹8,000', included: false },
-        { guests: 6, price: '₹10,000', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹8,000', included: true },
+        additionalGuestPrice: '₹3,000'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹6,000', included: false },
+        additionalGuestPrice: '₹2,500'
+      },
     },
   },
   {
@@ -165,17 +165,15 @@ const stays: Stay[] = [
       '/images/stays/g1e.jpg',
       '/images/stays/g1f.jpg',
     ],
-   pricing: {
-      weekend: [
-        { guests: 2, price: '₹8,000', included: true },
-        { guests: 4, price: '₹12,000', included: true },
-        { guests: 6, price: '₹15,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹6,000', included: false },
-        { guests: 4, price: '₹8,000', included: false },
-        { guests: 6, price: '₹10,000', included: false },
-      ],
+    pricing: {
+      weekend: {
+        baseTier: { guests: 2, price: '₹8,000', included: true },
+        additionalGuestPrice: '₹3,000'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹6,000', included: false },
+        additionalGuestPrice: '₹2,500'
+      },
     },
   },
   {
@@ -193,12 +191,14 @@ const stays: Stay[] = [
       '/images/stays/t2.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹4,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹2,500', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹4,000', included: true },
+        additionalGuestPrice: '₹0'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹2,500', included: false },
+        additionalGuestPrice: '₹0'
+      },
     },
   },
   {
@@ -216,12 +216,14 @@ const stays: Stay[] = [
       '/images/stays/t2.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹4,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹2,500', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹4,000', included: true },
+        additionalGuestPrice: '₹0'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹2,500', included: false },
+        additionalGuestPrice: '₹0'
+      },
     },
   },
   {
@@ -239,12 +241,14 @@ const stays: Stay[] = [
       '/images/stays/t2.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹4,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹2,500', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹4,000', included: true },
+        additionalGuestPrice: '₹0'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹2,500', included: false },
+        additionalGuestPrice: '₹0'
+      },
     },
   },
   {
@@ -262,12 +266,14 @@ const stays: Stay[] = [
       '/images/stays/t2.jpg',
     ],
     pricing: {
-      weekend: [
-        { guests: 2, price: '₹4,000', included: true },
-      ],
-      weekday: [
-        { guests: 2, price: '₹2,500', included: false },
-      ],
+      weekend: {
+        baseTier: { guests: 2, price: '₹4,000', included: true },
+        additionalGuestPrice: '₹0'
+      },
+      weekday: {
+        baseTier: { guests: 2, price: '₹2,500', included: false },
+        additionalGuestPrice: '₹0'
+      },
     },
   },
 ];
@@ -330,7 +336,7 @@ function StayCard({ stay, onClick }: StayCardProps) {
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div>
             <p className="text-xs text-gray-500">Starting from</p>
-            <p className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekday[0].price}</p>
+            <p className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekday.baseTier.price}</p>
             <p className="text-xs text-gray-500">per night</p>
           </div>
           <button className="bg-[rgb(255,206,41)] text-gray-900 px-6 py-2.5 rounded-full font-semibold hover:bg-[rgb(245,196,31)] transition-colors shadow-md">
@@ -378,7 +384,8 @@ export default function StaysPage() {
               <p className="text-blue-800 text-sm leading-relaxed">
                 <strong>Weekend bookings:</strong> Complimentary breakfast included<br />
                 <strong>Meals:</strong> À la carte menu available for lunch & dinner<br />
-                <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans
+                <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans<br />
+                <strong>Children:</strong> 5 years and above will be charged at full price
               </p>
             </div>
           </div>
@@ -579,13 +586,23 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                 <p className="text-sm text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
                 </p>
-                <div className="space-y-3">
-                  {stay.pricing.weekend.map((p, idx) => (
-                    <div key={idx} className="flex justify-between items-center bg-white/70 px-6 py-4 rounded-xl">
-                      <span className="font-semibold text-gray-700">{p.guests} Guest{p.guests > 1 ? 's' : ''}</span>
-                      <span className="text-2xl font-bold text-[rgb(255,206,41)]">{p.price}</span>
+                <div className="space-y-4">
+                  <div className="bg-white/70 px-6 py-4 rounded-xl">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold text-gray-700">2 Guests</span>
+                      <span className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekend.baseTier.price}</span>
                     </div>
-                  ))}
+                    {stay.pricing.weekend.additionalGuestPrice !== '₹0' && (
+                      <div className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
+                        <p>Additional guests: <span className="font-semibold text-gray-800">{stay.pricing.weekend.additionalGuestPrice} per head</span></p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
+                    <p className="text-sm text-orange-900">
+                      <span className="font-semibold">Note:</span> Children 5 years and above will be charged at full price
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -596,16 +613,25 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   Weekday Pricing (Mon-Thu)
                 </h3>
                 <p className="text-sm text-gray-800 mb-6 font-medium">
-  Order from our Ala carte menu.
-</p>
-
-                <div className="space-y-3">
-                  {stay.pricing.weekday.map((p, idx) => (
-                    <div key={idx} className="flex justify-between items-center bg-white/70 px-6 py-4 rounded-xl">
-                      <span className="font-semibold text-gray-700">{p.guests} Guest{p.guests > 1 ? 's' : ''}</span>
-                      <span className="text-2xl font-bold text-blue-600">{p.price}</span>
+                  Order from our Ala carte menu
+                </p>
+                <div className="space-y-4">
+                  <div className="bg-white/70 px-6 py-4 rounded-xl">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="font-semibold text-gray-700">2 Guests</span>
+                      <span className="text-2xl font-bold text-blue-600">{stay.pricing.weekday.baseTier.price}</span>
                     </div>
-                  ))}
+                    {stay.pricing.weekday.additionalGuestPrice !== '₹0' && (
+                      <div className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
+                        <p>Additional guests: <span className="font-semibold text-gray-800">{stay.pricing.weekday.additionalGuestPrice} per head</span></p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
+                    <p className="text-sm text-orange-900">
+                      <span className="font-semibold">Note:</span> Children 5 years and above will be charged at full price
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -629,7 +655,7 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
             <div className="sticky top-24 bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-8">
               <div className="text-center mb-6">
                 <p className="text-gray-600 mb-2">Starting from</p>
-                <p className="text-4xl font-bold text-[rgb(255,206,41)] mb-1">{stay.pricing.weekday[0].price}</p>
+                <p className="text-4xl font-bold text-[rgb(255,206,41)] mb-1">{stay.pricing.weekday.baseTier.price}</p>
                 <p className="text-sm text-gray-500">per night</p>
               </div>
 
