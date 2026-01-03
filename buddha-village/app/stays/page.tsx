@@ -21,6 +21,7 @@ interface Stay {
   images: string[];
   pricing: {
     weekend: {
+      startingFrom: PricingTier;
       baseTier: PricingTier;
       additionalGuestPrice: string;
     };
@@ -53,12 +54,13 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹5,000', included: true },
         baseTier: { guests: 2, price: '₹10,000', included: true },
         additionalGuestPrice: '₹4,000'
       },
       weekday: {
         baseTier: { guests: 2, price: '₹8,000', included: false },
-        additionalGuestPrice: '₹3,000'
+        additionalGuestPrice: '₹3,500'
       },
     },
   },
@@ -82,8 +84,9 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹4,000', included: true },
         baseTier: { guests: 2, price: '₹8,000', included: true },
-        additionalGuestPrice: '₹3,000'
+        additionalGuestPrice: '₹3,500'
       },
       weekday: {
         baseTier: { guests: 2, price: '₹6,000', included: false },
@@ -110,8 +113,9 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹4,000', included: true },
         baseTier: { guests: 2, price: '₹8,000', included: true },
-        additionalGuestPrice: '₹3,000'
+        additionalGuestPrice: '₹3,500'
       },
       weekday: {
         baseTier: { guests: 2, price: '₹6,000', included: false },
@@ -138,8 +142,9 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹4,000', included: true },
         baseTier: { guests: 2, price: '₹8,000', included: true },
-        additionalGuestPrice: '₹3,000'
+        additionalGuestPrice: '₹3,500'
       },
       weekday: {
         baseTier: { guests: 2, price: '₹6,000', included: false },
@@ -167,8 +172,9 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹4,000', included: true },
         baseTier: { guests: 2, price: '₹8,000', included: true },
-        additionalGuestPrice: '₹3,000'
+        additionalGuestPrice: '₹3,500'
       },
       weekday: {
         baseTier: { guests: 2, price: '₹6,000', included: false },
@@ -192,6 +198,7 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹2,000', included: true },
         baseTier: { guests: 2, price: '₹4,000', included: true },
         additionalGuestPrice: '₹0'
       },
@@ -217,6 +224,7 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹2,000', included: true },
         baseTier: { guests: 2, price: '₹4,000', included: true },
         additionalGuestPrice: '₹0'
       },
@@ -242,6 +250,7 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹2,000', included: true },
         baseTier: { guests: 2, price: '₹4,000', included: true },
         additionalGuestPrice: '₹0'
       },
@@ -267,6 +276,7 @@ const stays: Stay[] = [
     ],
     pricing: {
       weekend: {
+        startingFrom: { guests: 1, price: '₹2,000', included: true },
         baseTier: { guests: 2, price: '₹4,000', included: true },
         additionalGuestPrice: '₹0'
       },
@@ -336,8 +346,8 @@ function StayCard({ stay, onClick }: StayCardProps) {
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <div>
             <p className="text-xs text-gray-500">Starting from</p>
-            <p className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekday.baseTier.price}</p>
-            <p className="text-xs text-gray-500">per night</p>
+            <p className="text-2xl font-bold text-[rgb(255,206,41)]">{stay.pricing.weekend.startingFrom.price}</p>
+            <p className="text-xs text-gray-500">per person per night</p>
           </div>
           <button className="bg-[rgb(255,206,41)] text-gray-900 px-6 py-2.5 rounded-full font-semibold hover:bg-[rgb(245,196,31)] transition-colors shadow-md">
             View Details →
@@ -351,7 +361,6 @@ function StayCard({ stay, onClick }: StayCardProps) {
 export default function StaysPage() {
   const [selectedStay, setSelectedStay] = useState<Stay | null>(null);
 
-  // Categorize stays by type
   const cottages = stays.filter(stay => stay.type === 'cottage');
   const rooms = stays.filter(stay => stay.type === 'room');
   const tents = stays.filter(stay => stay.type === 'tent');
@@ -362,7 +371,6 @@ export default function StaysPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[rgb(255,246,220)] to-white">
-      {/* Hero Section */}
       <div className="relative bg-[rgb(255,206,41)] text-gray-900 py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
@@ -374,7 +382,6 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Info Banner */}
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
           <div className="flex items-start gap-4">
@@ -392,7 +399,6 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Cottages Section */}
       {cottages.length > 0 && (
         <div className="max-w-6xl mx-auto px-2 py-12">
           <div className="flex items-center gap-3 mb-8">
@@ -400,19 +406,15 @@ export default function StaysPage() {
             <h2 className="text-4xl font-bold text-gray-900">Lake View Duplex Cottages</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Empty column for left */}
             <div className="hidden md:block"></div>
-            {/* Center column with cottage */}
             {cottages.map((stay) => (
               <StayCard key={stay.id} stay={stay} onClick={() => setSelectedStay(stay)} />
             ))}
-            {/* Empty column for right */}
             <div className="hidden md:block"></div>
           </div>
         </div>
       )}
 
-      {/* Rooms Section */}
       {rooms.length > 0 && (
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex items-center gap-3 mb-8">
@@ -427,7 +429,6 @@ export default function StaysPage() {
         </div>
       )}
 
-      {/* Tents Section */}
       {tents.length > 0 && (
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="flex items-center gap-3 mb-8">
@@ -442,7 +443,6 @@ export default function StaysPage() {
         </div>
       )}
 
-      {/* Pet Stay Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-3xl p-8 shadow-xl">
           <div className="flex items-center gap-4 mb-4">
@@ -461,7 +461,6 @@ export default function StaysPage() {
         </div>
       </div>
 
-      {/* Contact CTA */}
       <div className="max-w-6xl mx-auto px-4 py-12 text-center">
         <h3 className="text-2xl font-bold text-gray-900 mb-4">Planning a Group Retreat?</h3>
         <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
@@ -491,7 +490,6 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Back Button */}
       <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <button
@@ -504,7 +502,6 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
         </div>
       </div>
 
-      {/* Image Carousel */}
       <div className="relative h-[75vh] md:h-[85vh] bg-black overflow-hidden rounded-xl">
         <img
           src={stay.images[currentImg]}
@@ -512,7 +509,6 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
           className="w-full h-full object-contain"
         />
 
-        {/* Navigation Arrows */}
         {stay.images.length > 1 && (
           <>
             <button
@@ -530,13 +526,11 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
           </>
         )}
 
-        {/* Image Counter */}
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-5 py-2 rounded-full text-sm font-medium">
           {currentImg + 1} / {stay.images.length}
         </div>
       </div>
 
-      {/* Thumbnails */}
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
           {stay.images.map((img, idx) => (
@@ -553,10 +547,8 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid md:grid-cols-3 gap-12">
-          {/* Left Column - Info */}
           <div className="md:col-span-2">
             <h1 className="text-5xl font-bold text-gray-900 mb-2">{stay.name}</h1>
             <p className="text-2xl text-[rgb(255,206,41)] mb-6 font-bold">{stay.tagline}</p>
@@ -575,13 +567,11 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
 
             <p className="text-lg text-gray-700 leading-relaxed mb-12">{stay.description}</p>
 
-            {/* Pricing Tables */}
             <div className="space-y-8">
-              {/* Weekend Pricing */}
               <div className="bg-gradient-to-br from-[rgb(255,246,220)] to-[rgb(255,236,180)] rounded-2xl p-8 border-2 border-[rgb(255,206,41)]">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <span>🌟</span>
-                  Weekend (Fri-Sun) & Festival Pricing
+                  Pricing
                 </h3>
                 <p className="text-sm text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
@@ -606,36 +596,6 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                 </div>
               </div>
 
-              {/* Weekday Pricing */}
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border-2 border-blue-200">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4 flex items-center gap-2">
-                  <span>📅</span>
-                  Weekday Pricing (Mon-Thu)
-                </h3>
-                <p className="text-sm text-gray-800 mb-6 font-medium">
-                  Order from our Ala carte menu
-                </p>
-                <div className="space-y-4">
-                  <div className="bg-white/70 px-6 py-4 rounded-xl">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold text-gray-700">2 Guests</span>
-                      <span className="text-2xl font-bold text-blue-600">{stay.pricing.weekday.baseTier.price}</span>
-                    </div>
-                    {stay.pricing.weekday.additionalGuestPrice !== '₹0' && (
-                      <div className="text-sm text-gray-600 mt-2 pt-2 border-t border-gray-200">
-                        <p>Additional guests: <span className="font-semibold text-gray-800">{stay.pricing.weekday.additionalGuestPrice} per head</span></p>
-                      </div>
-                    )}
-                  </div>
-                  <div className="bg-orange-50 px-4 py-3 rounded-lg border border-orange-200">
-                    <p className="text-sm text-orange-900">
-                      <span className="font-semibold">Note:</span> Children 5 years and above will be charged at full price
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bulk Booking Note */}
               <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border-2 border-purple-200">
                 <div className="flex items-start gap-3">
                   <span className="text-2xl">📞</span>
@@ -650,13 +610,12 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
             </div>
           </div>
 
-          {/* Right Column - Booking Card */}
           <div className="md:col-span-1">
             <div className="sticky top-24 bg-white rounded-2xl shadow-xl border-2 border-gray-200 p-8">
               <div className="text-center mb-6">
                 <p className="text-gray-600 mb-2">Starting from</p>
-                <p className="text-4xl font-bold text-[rgb(255,206,41)] mb-1">{stay.pricing.weekday.baseTier.price}</p>
-                <p className="text-sm text-gray-500">per night</p>
+                <p className="text-4xl font-bold text-[rgb(255,206,41)] mb-1">{stay.pricing.weekend.startingFrom.price}</p>
+                <p className="text-sm text-gray-500">per person per night</p>
               </div>
 
               <a
