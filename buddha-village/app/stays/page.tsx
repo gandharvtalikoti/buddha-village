@@ -389,9 +389,9 @@ export default function StaysPage() {
             <div>
               <h3 className="font-bold text-blue-900 mb-2">Pricing Information</h3>
               <p className="text-blue-800 text-sm leading-relaxed">
-                <strong>Weekend bookings:</strong> Complimentary breakfast included<br />
+                {/* <strong>Weekend bookings:</strong> Complimentary breakfast included<br /> */}
                 <strong>Meals:</strong> À la carte menu available for lunch & dinner<br />
-                <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans<br />
+                <strong>Bulk bookings:</strong> Special packages available - please call or message for custom plans (Complimentary breakfast included)<br />
                 <strong>Children:</strong> 5 years and above will be charged at full price
               </p>
             </div>
@@ -573,9 +573,9 @@ function StayDetailPage({ stay, onBack }: StayDetailPageProps) {
                   <span>🌟</span>
                   Pricing
                 </h3>
-                <p className="text-sm text-gray-800 mb-6 font-medium">
+                {/* <p className="text-sm text-gray-800 mb-6 font-medium">
                   Includes complimentary breakfast
-                </p>
+                </p> */}
                 <div className="space-y-4">
                   <div className="bg-white/70 px-6 py-4 rounded-xl">
                     <div className="flex justify-between items-center mb-2">
